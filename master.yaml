@@ -1,0 +1,34 @@
+openapi: 3.0.0
+info:
+  version: 0.0.1-oas3
+  title: cpuinfo
+  description: >-
+    A simple service to get cpuinfo as an example of using swagger-2.0
+    specification and codegen
+  termsOfService: 'http://swagger.io/terms/'
+  contact:
+    name: Cloudmesh REST Service Example
+  license:
+    name: Apache
+paths:
+   /ML/modelaccuracy:
+    get:
+      tags:
+        - ML_acc
+      operationId: glaze_net_dir.get_accuracy.getaccuracy
+      description: Returns accuracy of current model.
+      responses:
+        '200':
+          description: 'Neural Network accuracy.'
+   /ML/predict/<glaze>:
+    get:
+      tags:
+        - GLAZE
+      operationId: glaze_net_dir.predict.predict_glaze
+      description: returns glaze prediction from model.  
+      responses:
+        '200':
+          description: 'Glaze recipe entry needed.'
+
+servers:
+  - url: 'http://localhost:8080/engr-222'
